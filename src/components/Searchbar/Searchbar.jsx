@@ -11,7 +11,7 @@ export class Searchbar extends Component {
   };
 
   handleSearchNameChange = e => {
-    this.setState({ searchName: e.currentTarget.value.toLowerCase().trim() });
+    this.setState({ searchName: e.currentTarget.value.toLowerCase() });
   };
 
   handleSubmit = async e => {

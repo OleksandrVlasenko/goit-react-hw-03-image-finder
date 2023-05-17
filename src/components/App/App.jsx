@@ -59,7 +59,7 @@ export class App extends Component {
           getlargeImageURL={this.getlargeImageURL}
         />
         {images.length !== 0 &&
-          total >= fetchImgsInstance.page * fetchImgsInstance.perPage && (
+          total > fetchImgsInstance.page * fetchImgsInstance.perPage && (
             <Button
               onSubmit={this.handleSubmit}
               images={images}
