@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ImSearch } from 'react-icons/im';
+import PropTypes from 'prop-types';
 
 import { Message } from 'utils/message';
 import { fetchImgsInstance } from 'utils/pixabay-request';
@@ -39,6 +40,7 @@ export class Searchbar extends Component {
         Message.failure(
           'Sorry, there are no images matching your search query. Please try again.'
         );
+        this.props.toogleLoader();
         return;
       }
 
@@ -72,3 +74,8 @@ export class Searchbar extends Component {
     );
   }
 }
+
+Searchbar.propType = {
+  onSubmit: PropTypes.func.isRequired,
+  toogleLoader: PropTypes.func.isRequired,
+};

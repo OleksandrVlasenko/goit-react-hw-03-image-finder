@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import "./ImageGalleryItem.modules.css"
 
 export const ImageGalleryItem = ({
@@ -24,4 +26,12 @@ export const ImageGalleryItem = ({
       />
     </li>
   );
+};
+
+ImageGalleryItem.propType = {
+  imageLink: PropTypes.string.isRequired,
+  imageDescription: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  getAlt: PropTypes.func.isRequired,
+  getlargeImageURL: PropTypes.func.isRequired,
 };

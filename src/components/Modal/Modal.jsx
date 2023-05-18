@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
+import PropTypes from 'prop-types';
+
 import './Modal.modules.css';
 
 const modalRoot = document.querySelector('#modal-root');
@@ -37,3 +39,9 @@ export class Modal extends Component {
     );
   }
 }
+
+Modal.propType = {
+  onClose: PropTypes.func.isRequired,
+  largeImageURL: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+};

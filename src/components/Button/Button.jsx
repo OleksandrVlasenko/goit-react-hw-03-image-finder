@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { Message } from 'utils/message';
 import { fetchImgsInstance } from 'utils/pixabay-request';
@@ -37,3 +38,9 @@ export class Button extends Component {
     );
   }
 }
+
+Button.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  images: PropTypes.array.isRequired,
+  toogleLoader: PropTypes.func.isRequired,
+};
