@@ -6,7 +6,7 @@ import { ImageGallery } from 'components/ImageGallery/ImageGallery';
 import { Button } from 'components/Button/Button';
 import { Modal } from 'components/Modal/Modal';
 import { fetchImgsInstance } from 'utils/pixabay-request';
-import "./App.modules.css"
+import './App.modules.css';
 
 export class App extends Component {
   state = {
@@ -58,14 +58,13 @@ export class App extends Component {
           getAlt={this.getAlt}
           getlargeImageURL={this.getlargeImageURL}
         />
-        {images.length !== 0 &&
-          total > fetchImgsInstance.page * fetchImgsInstance.perPage && (
-            <Button
-              onSubmit={this.handleSubmit}
-              images={images}
-              toogleLoader={this.toogleLoader}
-            />
-          )}
+        {total > fetchImgsInstance.page * fetchImgsInstance.perPage && (
+          <Button
+            onSubmit={this.handleSubmit}
+            images={images}
+            toogleLoader={this.toogleLoader}
+          />
+        )}
         <Grid
           height="40"
           width="40"
